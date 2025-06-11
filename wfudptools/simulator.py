@@ -124,6 +124,7 @@ def calcRapidWind(data):
     data['ob'][2] = round(data['ob'][2],1)
 
     broadcastUDP(data)
+    #print("Wind at ",timestamp)
 
 def calcEvtStrike(data):
     timestamp = getNow()
@@ -131,12 +132,13 @@ def calcEvtStrike(data):
     data['evt'][1] = 10
     data['evt'][2] = 1234
     broadcastUDP(data)
-    print("strike at ",timestamp)
+    print("strike at", timestamp, "data:", data)
 
 def calcEvtPrecip(data):
     timestamp = getNow()
     data['evt'][0] = timestamp
     broadcastUDP(data)
+    print("rain at ",timestamp)
 
 def calcHubStatus(data,counter):
     timestamp = getNow()
